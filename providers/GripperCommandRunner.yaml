@@ -1,0 +1,43 @@
+%YAML 1.1
+---
+name: OmronGripperCommandRunner
+spec_type: provider
+spec_version: 1.2
+description: "Omron soft two-finger gripper command provider."
+implements: omron_gripper_capabilities/OmronGripperCommandRunner
+runner: capabilities2_runner::GripperCommandRunner
+depends_on:
+  "gripper_capabilities/GripperLaunchRunner":
+    provider: "omron_gripper_capabilities/OmronGripperLaunchRunner"
+
+definition:
+  command: "<Runner interface=omron_gripper_capabilities/OmronGripperCommandRunner provider=omron_gripper_capabilities/OmronGripperCommandRunner position='$position' max_effort='$max_effort' />"
+  configuration_parameters:
+    - name: position
+      type: double
+      semantic_key: gripper.command.position
+      description: "Target gripper opening requested through the public gripper action interface. Opens at 0.08 and closes at 0.0."
+    - name: max_effort
+      type: double
+      optional: true
+      default: 0.0
+      semantic_key: gripper.command.max_effort
+      description: "Requested gripper closing effort in newtons when supported by the active gripper driver. For normal operation, this can be 0.0"
+  runtime_parameters:
+    output:
+      - name: reached_position
+        type: double
+        semantic_key: gripper.result.position
+        description: "Final gripper opening reported by the action result."
+      - name: reached_effort
+        type: double
+        semantic_key: gripper.result.effort
+        description: "Final gripper effort reported by the action result."
+      - name: stalled
+        type: bool
+        semantic_key: gripper.result.stalled
+        description: "Whether the gripper stopped on effort before reaching the exact target."
+      - name: reached_goal
+        type: bool
+        semantic_key: gripper.result.reached_goal
+        description: "Whether the gripper reached the requested target position."

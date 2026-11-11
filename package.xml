@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>omron_gripper_capabilities</name>
+  <version>0.1.0</version>
+  <description>Omron-specific gripper plans, configuration, launch wrapper, and capability providers.</description>
+
+  <maintainer email="kalanaratnayake95@gmail.com">Kalana Ratnayake</maintainer>
+  <maintainer email="kalana.ratnayakemudiyanselage@canberra.edu.au">Kalana Ratnayake</maintainer>
+
+  <author email="kalana.ratnayakemudiyanselage@canberra.edu.au">Kalana Ratnayake</author>
+  <author email="kalanaratnayake95@gmail.com">Kalana Ratnayake</author>
+  
+  <license>MIT</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <exec_depend>ament_index_python</exec_depend>
+  <exec_depend>capabilities2_server</exec_depend>
+  <exec_depend>fabric_generator_prompttools</exec_depend>
+  <exec_depend>fabric_parser_xml</exec_depend>
+  <exec_depend>fabric_server</exec_depend>
+  <exec_depend>fabric_validator</exec_depend>
+  <exec_depend>gripper_capabilities</exec_depend>
+  <exec_depend>gripper_ros</exec_depend>
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+  <exec_depend>prompt_bridge</exec_depend>
+  <exec_depend>prompt_capabilities</exec_depend>
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+
+    <semantic_capability_interface>
+      semantic_interfaces/GripperLaunchRunner.yaml
+    </semantic_capability_interface>
+    <semantic_capability_interface>
+      semantic_interfaces/GripperCommandRunner.yaml
+    </semantic_capability_interface>
+    <semantic_capability_interface>
+      semantic_interfaces/GripperStateRunner.yaml
+    </semantic_capability_interface>
+    <capability_provider>
+      providers/GripperLaunchRunner.yaml
+    </capability_provider>
+    <capability_provider>
+      providers/GripperCommandRunner.yaml
+    </capability_provider>
+    <capability_provider>
+      providers/GripperStateRunner.yaml
+    </capability_provider>
+
+  </export>
+</package>

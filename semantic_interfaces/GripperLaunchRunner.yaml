@@ -1,0 +1,7 @@
+%YAML 1.1
+---
+name: OmronGripperLaunchRunner
+spec_type: semantic_interface
+spec_version: 1.2
+description: "Launches the Omron soft two-finger gripper stack."
+redefines: gripper_capabilities/GripperLaunchRunner

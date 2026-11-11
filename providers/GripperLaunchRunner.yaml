@@ -1,0 +1,14 @@
+%YAML 1.1
+---
+name: OmronGripperLaunchRunner
+spec_type: provider
+spec_version: 1.2
+description: "Launches the Omron soft two-finger gripper stack."
+implements: omron_gripper_capabilities/OmronGripperLaunchRunner
+runner: gripper_ros/gripper_soft_two_fingers.launch.py
+definition:
+	launch_readiness:
+		action:
+			name: gripper_command
+			type: control_msgs/action/GripperCommand
+			timeout: 60.0

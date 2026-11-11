@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Plan>
+    <Control type="sequential" name="gripper_position_sequence">
+        <Runner
+            interface="omron_gripper_capabilities/OmronGripperCommandRunner"
+            provider="omron_gripper_capabilities/OmronGripperCommandRunner"
+            position="0.08" />
+        <Runner
+            interface="omron_gripper_capabilities/OmronGripperCommandRunner"
+            provider="omron_gripper_capabilities/OmronGripperCommandRunner"
+            position="0.0" />
+        <Runner
+            interface="omron_gripper_capabilities/OmronGripperCommandRunner"
+            provider="omron_gripper_capabilities/OmronGripperCommandRunner"
+            position="0.08" />
+    </Control>
+</Plan>

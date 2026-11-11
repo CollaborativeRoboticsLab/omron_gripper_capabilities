@@ -1,0 +1,7 @@
+%YAML 1.1
+---
+name: OmronGripperCommandRunner
+spec_type: semantic_interface
+spec_version: 1.2
+description: "Commands the Omron soft two-finger gripper by position and effort."
+redefines: gripper_capabilities/GripperCommandRunner
