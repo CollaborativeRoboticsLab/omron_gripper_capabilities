@@ -21,6 +21,15 @@ The example plans use `position="0.08"` for open and `position="0.0"` for closed
 
 The example plans use `position="0.08"` for open and `position="0.0"` for closed. Adjust these values if the deployed gripper has a different travel range.
 
+## Capability inheritance
+
+```mermaid
+flowchart LR
+	G["gripper_capabilities<br/>Generic gripper interfaces and runners"]
+	O["omron_gripper_capabilities<br/>Omron gripper semantics and launch"]
+	G -->|"specializes"| O
+```
+
 ## Build
 
 ```bash
